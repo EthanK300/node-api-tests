@@ -10,6 +10,19 @@ createButton.onclick = async function (event) {
     }else{
         const data = createArea.value;
         const body = JSON.stringify({data});
-        const newResponse = await fetch()
+        console.log(body);
+        const newResponse = await fetch("/databases", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body,
+        });
+        const newData = await newResponse.json();
+        printAPIResponse(newData);
     }
+}
+
+function printAPIResponse(apiObj) {
+    
 }
