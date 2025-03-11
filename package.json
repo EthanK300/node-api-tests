@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@notionhq/client": "^2.2.16",
+    "color": "^5.0.0",
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
