@@ -19,10 +19,5 @@ createButton.onclick = async function (event) {
             body,
         });
         const newData = await newResponse.json();
-        printAPIResponse(newData);
     }
-}
-
-function printAPIResponse(apiObj) {
-    
 }
