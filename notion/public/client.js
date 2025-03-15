@@ -21,3 +21,10 @@ createButton.onclick = async function (event) {
         const newData = await newResponse.json();
     }
 }
+
+$("#content").click(function () {
+    console.log("A");
+    $(this).css({
+        "background-color" : "red",
+    });
+});
