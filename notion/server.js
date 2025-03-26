@@ -52,3 +52,17 @@ app.post("/databases", async function (request, response) {
         console.log("error" + error);
     }
 });
+
+app.get("/trigger", async function(req, res) {
+    console.log("notion reflection page data:");
+    const blockId = process.env.NOTION_REFLECT_ID;
+    const response = await notion.blocks.children.list({
+        block_id: blockId,
+        page_size: 50,
+    });
+    console.log(response);
+    res.status(200).send({
+        success:true,
+        message:"ok",
+    });
+});

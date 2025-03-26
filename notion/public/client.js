@@ -28,3 +28,11 @@ $("#content").click(function () {
         "background-color" : "red",
     });
 });
+
+$("#trigger").click(async function () {
+    console.log("triggered");
+    const response = await fetch("/trigger", {
+        method: "GET",
+    });
+    console.log(response);
+});
