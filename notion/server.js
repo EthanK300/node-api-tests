@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-
+const path = require("path");
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_KEY });
 
@@ -68,7 +68,13 @@ app.get("/trigger", async function(req, res) {
 });
 
 app.get("/test.html", async function(req, res) {
-    console.log("test function");
+    console.log(__dirname);
     res.sendFile(path.join(__dirname, "test.html"));
+    console.log("successfully sent test html");
+});
+
+app.get("/test.css", async function(req, res) {
+    console.log(__dirname);
     res.sendFile(path.join(__dirname, "test.css"));
+    console.log("successfully sent test css");
 });
