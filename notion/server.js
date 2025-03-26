@@ -66,3 +66,9 @@ app.get("/trigger", async function(req, res) {
         message:"ok",
     });
 });
+
+app.get("/test.html", async function(req, res) {
+    console.log("test function");
+    res.sendFile(path.join(__dirname, "test.html"));
+    res.sendFile(path.join(__dirname, "test.css"));
+});
