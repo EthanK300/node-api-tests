@@ -60,7 +60,14 @@ app.get("/trigger", async function(req, res) {
         block_id: blockId,
         page_size: 50,
     });
-    console.log(response);
+    console.log("----------------------------------------------------");
+    console.log(response.object);
+    //each block right now is 14 size
+    const blockSize = 14;
+    const numToTop = 3;
+    for(let i = numToTop; i < response.results.length; i+=blockSize){
+        console.log(response.results[i].type);
+    }
     res.status(200).send({
         success:true,
         message:"ok",
